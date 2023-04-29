@@ -31,7 +31,7 @@ function App() {
               <Route path="/invoice" element={<Invoice />} />
               {/* <Route path="/form" element={<Form />} /> */}
               {/* <Route path="/bar" element={<Bar />} /> */}
-              {/* <Route path="/contacts" element={<Contacts />} /> */}
+              <Route path="/contacts" element={<Contacts />} />
               {/* <Route path="/line" element={<Line />} /> */}
               {/* <Route path="/faq" element={<Faq />} /> */}
               {/* <Route path="/geography" element={<Geography />} /> */}

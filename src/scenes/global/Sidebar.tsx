@@ -28,15 +28,16 @@ const Item = (Props: props) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <MenuItem
-      active={Props.selected === Props.title}
-      style={{ color: `${colors.gray[100]}` }}
-      onClick={() => Props.setSelected(Props.title)}
-      icon={Props.icon}
-    >
-      <Typography>{Props.title}</Typography>
-      <Link to={Props.to} />
-    </MenuItem>
+    <Link to={Props.to}>
+      <MenuItem
+        active={Props.selected === Props.title}
+        style={{ color: `${colors.gray[100]}` }}
+        onClick={() => Props.setSelected(Props.title)}
+        icon={Props.icon}
+      >
+        <Typography>{Props.title}</Typography>
+      </MenuItem>
+    </Link>
   );
 };
 
@@ -126,9 +127,12 @@ const SideBar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Typography variant="h6" color={colors.gray[300]} sx={{m: '15px 0 5px 20px'}}>
+            <Typography
+              variant="h6"
+              color={colors.gray[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
               Data
-
             </Typography>
             <Item
               title={"Manage Team"}
@@ -138,12 +142,26 @@ const SideBar = () => {
               setSelected={setSelected}
             />
             <Item
+              title={"Contact Information"}
+              to={"/contacts"}
+              icon={<ContactsOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            ></Item>
+            <Item
               title={"Invoices Balance"}
               to={"/invoice"}
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
+            <Typography
+              variant="h6"
+              color={colors.gray[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Page
+            </Typography>
             <Item
               title={"Profile Form"}
               to={"/form"}
