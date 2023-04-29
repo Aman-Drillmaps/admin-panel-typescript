@@ -14,7 +14,7 @@ const Team = () => {
     {
       field: "id",
       HeaderName: "ID",
-      flex: 1,
+      flex: 0.5,
       // cellClassName: "name-column--cell",
     },
     {
@@ -77,6 +77,7 @@ const Team = () => {
           <Header
             title={"Contacts"}
             subtitle={"List Of Contacts For Feature Reference"}
+            isButton={true}
           />
         <Box m='40px 0 0 0' height='75vh' sx={{'& .MuiDataGrid-root': {border: 'none'} , '& MuiDataGrid-cell' : {
           borderBottom: 'none'

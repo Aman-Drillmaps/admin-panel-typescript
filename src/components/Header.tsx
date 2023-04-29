@@ -5,6 +5,7 @@ import { tokens } from "../Theme";
 interface props {
   title: string;
   subtitle: string;
+  isButton: boolean;
 }
 const Header = (Props: props) => {
   const theme = useTheme();
@@ -27,7 +28,15 @@ const Header = (Props: props) => {
           </Typography>
         </Box>
         <Box>
-          <Button variant="contained" id="Button" sx={{backgroundColor: colors.greenAccent[400]}} >+Add Contact</Button>
+          {Props?.isButton && (
+            <Button
+              variant="contained"
+              id="Button"
+              sx={{ backgroundColor: colors.greenAccent[400] }}
+            >
+              +Add Contact
+            </Button>
+          )}
         </Box>
       </Box>
     </Box>

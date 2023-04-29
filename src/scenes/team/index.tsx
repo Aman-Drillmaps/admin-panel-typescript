@@ -7,6 +7,8 @@ import AdminPanelSettingOutlinedIcon from "@mui/icons-material/AdminPanelSetting
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
+import {GridToolbar} from '@mui/x-data-grid'
+
 
 const Team = () => {
   const theme = useTheme();
@@ -15,7 +17,7 @@ const Team = () => {
     {
       field: "id",
       HeaderName: "ID",
-      flex: 1,
+      flex: 0.5,
       cellClassName: "name-column--cell",
     },
     {
@@ -74,6 +76,7 @@ const Team = () => {
           <Header
             title={"Team Information"}
             subtitle={"Here is Your Lovely Team"}
+            isButton={true}
           />
         <Box m='40px 0 0 0' height='75vh' sx={{'& .MuiDataGrid-root': {border: 'none'} , '& MuiDataGrid-cell' : {
           borderBottom: 'none'
@@ -92,8 +95,11 @@ const Team = () => {
           borderTop: 'none',
           backgroundColor: colors.blueAccent[700]
           
+        },
+        '& .MuiDataGrid-toolbarContainer .MuiButton-text' : {
+          color: `${colors.gray[100]} !important`
         }}}>
-          <DataGrid columns={columns} rows={mockDataTeam} />
+          <DataGrid columns={columns} rows={mockDataTeam} components={{Toolbar: GridToolbar}} />
         </Box>
       </Box>
     </>
